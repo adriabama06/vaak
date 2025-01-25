@@ -2,7 +2,9 @@
 
 Transform your typing experience with VaaK, an intelligent Android keyboard that brings the power of AI-driven voice dictation to your fingertips.
 
-[Screenshots coming soon]
+![Main Keyboard](docs/images/recording_states.jpg)
+
+*AI-powered voice dictation with real-time feedback*
 
 ## What is VaaK?
 
@@ -18,6 +20,33 @@ In today's fast-paced digital world, traditional typing can be a bottleneck in o
 - Seamless keyboard integration
 
 Our philosophy is simple: voice input should be as natural and reliable as typing, without compromising on privacy or user control.
+
+⭐️ Please Star [GitHub Repo](https://github.com/amanhigh/vaak) if you like it!
+
+## Screenshots
+
+### Core Features
+![Setup Wizard](docs/images/setup_screen.jpg)
+*Quick setup with API configuration*
+
+![Voice Recording States](docs/images/recording_states.jpg)
+*Smart recording with color-coded feedback (Green → Yellow → Red)*
+
+![Language Selection](docs/images/language_selection.jpg)
+*Multiple language support with quick switching*
+
+### Advanced Features
+![Numpad Mode](docs/images/numpad_mode.jpg)
+*Quick number input with long-press on space*
+
+![Prompts Library](docs/images/prompts_library.jpg)
+*Custom prompt management and quick access*
+
+![Translation Mode](docs/images/translation_mode.jpg)
+*Real-time translation with language detection*
+
+![Settings Interface](docs/images/settings_screen.jpg)
+*Comprehensive settings for customization*
 
 ## Core Features
 
@@ -74,8 +103,10 @@ Our philosophy is simple: voice input should be as natural and reliable as typin
 ## Getting Started
 
 ### 1. Installation
-- Download VaaK from the Release Section of Github
+- Download VaaK from the 📥 [Release](https://github.com/amanhigh/vaak/releases) Section of Github
 - Install Android application (Need to allow scan and install for downloaded APK).
+
+![Install](docs/images/install.jpg)
 
 ### 2. Initial Setup
 1. Open VaaK after installation
