@@ -46,6 +46,8 @@
     <string name="settings_api_key">🔑 API Key</string>
     <string name="settings_api_key_hint">🔑 Enter your API key</string>
     <string name="settings_api_key_saved">✅ API key saved</string>
+    <string name="settings_openai_url_title">🌐 Custom OpenAI URL</string>
+    <string name="settings_openai_url_hint">🌐 Enter your custom API URL</string>
     <string name="settings_prompts_title">📝 Prompts</string>
     <string name="settings_languages_title">🌐 Language Settings</string>
     <string name="settings_favorite_languages">Favorite Languages</string>

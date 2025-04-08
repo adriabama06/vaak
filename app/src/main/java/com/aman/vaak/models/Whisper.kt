@@ -47,7 +47,8 @@ data class WhisperConfig(
     val temperature: Float = DEFAULT_TEMPERATURE,
     val responseFormat: WhisperResponseFormat = WhisperResponseFormat.JSON,
     val maxFileSize: Long = MAX_FILE_SIZE,
-) : BaseAIConfig(baseEndpoint, model, systemPrompt) {
+    val customBaseEndpoint: String? = null,
+) : BaseAIConfig(customBaseEndpoint ?: baseEndpoint, model, systemPrompt) {
     val transcriptionEndpoint: String
         get() = "$baseEndpoint/audio/transcriptions"
 

@@ -80,6 +80,32 @@ class VaakSettingsActivity : AppCompatActivity() {
             },
         )
 
+        // API Key handling
+        binding.openAiUrlInput.setText(settingsManager.getCustomOpenAiUrl())
+        binding.openAiUrlInput.addTextChangedListener(
+            object : TextWatcher {
+                override fun afterTextChanged(s: Editable?) {
+                    s?.let {
+                        settingsManager.saveCustomOpenAiUrl(it.toString())
+                    }
+                }
+
+                override fun beforeTextChanged(
+                    s: CharSequence?,
+                    start: Int,
+                    count: Int,
+                    after: Int,
+                ) {}
+
+                override fun onTextChanged(
+                    s: CharSequence?,
+                    start: Int,
+                    before: Int,
+                    count: Int,
+                ) {}
+            },
+        )
+
         // Language selection
         binding.languageButton.setOnClickListener {
             languageHandler.showFavoriteLanguageSelection(this)

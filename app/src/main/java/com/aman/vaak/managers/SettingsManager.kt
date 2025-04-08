@@ -13,6 +13,10 @@ interface SettingsManager {
 
     fun saveApiKey(apiKey: String)
 
+    fun getCustomOpenAiUrl(): String?
+
+    fun saveCustomOpenAiUrl(url: String?)
+
     fun getTargetLanguage(): Language?
 
     fun saveTargetLanguage(language: Language?)
@@ -35,6 +39,7 @@ class SettingsManagerImpl
     constructor(context: Context) : SettingsManager {
         private companion object {
             const val KEY_API_KEY = "api_key"
+            const val KEY_CUSTOM_OPENAI_URL = "custom_openai_url" 
             const val KEY_TARGET_LANGUAGE = "target_language"
             const val KEY_FAVORITE_LANGUAGES = "favorite_languages"
             const val KEY_VOICE_INPUT_LANGUAGE = "voice_input_language"
@@ -59,6 +64,10 @@ class SettingsManagerImpl
             return sharedPreferences.getString(KEY_API_KEY, null)
         }
 
+        override fun getCustomOpenAiUrl(): String? {
+            return sharedPreferences.getString(KEY_CUSTOM_OPENAI_URL, null)
+        }
+
         override fun getVoiceInputLanguage(): Language? {
             val code = sharedPreferences.getString(KEY_VOICE_INPUT_LANGUAGE, null)
             return code?.let { Language.fromCode(it) }
@@ -72,6 +81,10 @@ class SettingsManagerImpl
 
         override fun saveApiKey(apiKey: String) {
             sharedPreferences.edit().putString(KEY_API_KEY, apiKey).apply()
+        }
+
+        override fun saveCustomOpenAiUrl(url: String?) {
+            sharedPreferences.edit().putString(KEY_CUSTOM_OPENAI_URL, url).apply()
         }
 
         override fun getTargetLanguage(): Language? {
@@ -106,8 +119,10 @@ class SettingsManagerImpl
         }
 
         override fun getWhisperConfig(): WhisperConfig {
+            val customUrl = getCustomOpenAiUrl()
             return WhisperConfig(
                 language = getVoiceInputLanguage()?.code,
+                customBaseEndpoint = customUrl
             )
         }
 
