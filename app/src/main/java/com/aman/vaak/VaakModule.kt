@@ -6,6 +6,7 @@ import android.view.WindowManager
 import android.view.inputmethod.InputMethodManager
 import com.aallam.openai.api.http.Timeout
 import com.aallam.openai.client.OpenAI
+import com.aallam.openai.client.OpenAIHost
 import com.aman.vaak.handlers.BackupHandler
 import com.aman.vaak.handlers.BackupHandlerImpl
 import com.aman.vaak.handlers.DictationHandler
@@ -186,6 +187,7 @@ object VaakModule {
         return OpenAI(
             token = settingsManager.getApiKey() ?: "",
             timeout = Timeout(socket = 60.seconds),
+            host = OpenAIHost(settingsManager.getCustomOpenAiUrl() ?: "https://api.openai.com/v1"),
         )
     }
 

@@ -39,7 +39,7 @@ class SettingsManagerImpl
     constructor(context: Context) : SettingsManager {
         private companion object {
             const val KEY_API_KEY = "api_key"
-            const val KEY_CUSTOM_OPENAI_URL = "custom_openai_url" 
+            const val KEY_CUSTOM_OPENAI_URL = "custom_openai_url"
             const val KEY_TARGET_LANGUAGE = "target_language"
             const val KEY_FAVORITE_LANGUAGES = "favorite_languages"
             const val KEY_VOICE_INPUT_LANGUAGE = "voice_input_language"
@@ -122,7 +122,7 @@ class SettingsManagerImpl
             val customUrl = getCustomOpenAiUrl()
             return WhisperConfig(
                 language = getVoiceInputLanguage()?.code,
-                customBaseEndpoint = customUrl
+                customBaseEndpoint = customUrl,
             )
         }
 
